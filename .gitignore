@@ -1,0 +1,10 @@
+# -----------------------------
+# Ignorar arquivos do Python
+# -----------------------------
+__pycache__/
+*.pyc
+# Ignora a pasta venv comum
+venv/
+.venv/
+# Ignora o ambiente virtual do VS Code
+.vscode/

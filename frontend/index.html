@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloader_MP3</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="glitter-bg theme-pink"> <div class="theme-toggle-container">
+        <span class="theme-label theme-pink-label" id="label-pink">Gliter Pink</span>
+
+        <label class="theme-toggle-switch">
+            <input type="checkbox" id="theme-checkbox" class="hidden">
+            <span class="slider"></span>
+        </label>
+
+        <span class="theme-label theme-blue-label" id="label-blue">Cyber Blue</span>
+    </div>
+
+    <div class="container" id="app-container">
+        <h1 id="app-title">Downloader Gliter-Pink 💖</h1>
+        <p>Insira o link do vídeo do YouTube para ver a prévia e baixar o MP3!</p>
+        
+        <div id="mainContent">
+            <input type="text" name="url" id="youtubeLink" placeholder="Cole o link do YouTube aqui..." required>
+            
+            <button class="pink-button" id="checkButton" onclick="handleCheckClick()">🔍 Buscar</button>
+        </div>
+
+        <div id="videoInfo">
+            <img id="thumbnail" src="" alt="Thumbnail do Vídeo">
+            <div id="videoTitle">Título do Vídeo</div>
+
+            <form id="downloadForm" action="/download_mp3" method="POST">
+                <input type="hidden" name="url" id="downloadUrl">
+                <input type="hidden" name="title" id="downloadTitle">
+                <button class="pink-button" type="submit" id="downloadButton">⬇️ Baixar MP3 Agora</button>
+            </form>
+        </div>
+
+        <div id="message" class="info"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
