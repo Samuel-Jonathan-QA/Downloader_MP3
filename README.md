@@ -62,20 +62,51 @@ https://github.com/user-attachments/assets/43f9d83c-8cd9-4636-ad43-058ee588d3dd
 
 ## 🚀 Guia de Execução Local
 
-### 🧩 1️⃣ Backend (API Python/Flask)
+### 🧩 1️⃣ Dependência Externa: FFmpeg
+
+Para garantir a conversão final para o formato MP3, você deve ter o FFmpeg instalado e acessível via linha de comando no seu sistema operacional (adicionado à variável de ambiente PATH).
+
+### 1. Baixar o FFmpeg:
+
+- Vá para a página oficial de downloads do FFmpeg: https://ffmpeg.org/download.html.
+- Baixe a versão apropriada para o seu sistema (Windows, macOS, Linux).
+
+### 2. Configurar a Variável de Ambiente PATH (Windows/Linux/Mac):
+
+- Extraia os arquivos baixados do FFmpeg para um diretório de fácil acesso (ex: C:\ffmpeg\ no Windows ou /usr/local/bin/ffmpeg no Linux/Mac).
+- Adicione o caminho completo da pasta bin do FFmpeg à sua variável de ambiente do sistema (PATH) para que o sistema consiga executar o comando ffmpeg de qualquer lugar.
+
+### 🧩 2️⃣ Backend (API Python/Flask)
+#### Para rodar o projeto localmente, siga estes passos:
 
 Certifique-se de que as bibliotecas `Flask` e `Pytube` estão instaladas:
 
+Crie e Ative um Ambiente Virtual (Opcional, mas Recomendado):
 ```bash
-# Instalar dependências
-pip install Flask pytube
 
-# Iniciar o servidor Flask 
+python -m venv venv
+# No Windows:
+.\venv\Scripts\activate
+# No Linux/Mac:
+source venv/bin/activate
+```
+
+ Instale as Dependências Python: Instale as bibliotecas Flask e Pytube. Também adicione a biblioteca ffmpeg-python que usaremos para interagir com o FFmpeg.
+```bash
+
+pip install Flask pytube ffmpeg-python
+# Ou use o requirements.txt (se existir):
+# pip install -r requirements.txt
+```
+
+Inicie o Servidor Flask:
+```bash
 python app.py
+
 ```
 ---
 
-### 💻 2️⃣ Frontend (Acesso)
+### 💻 3️⃣ Frontend (Acesso)
 
 O frontend é servido automaticamente pelo Flask. Acesse a URL:
 
